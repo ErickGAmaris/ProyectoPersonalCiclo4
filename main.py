@@ -37,6 +37,8 @@ fake_items_db = [{"item_name": "Foo"}, {"item_name": "Bar"}, {"item_name": "Baz"
 #Query parametros --> ops
 @app.get("/items/")
 async def read_item(skip: int = 0, limit: int = 10):
+    #Traer informacion de la base de datos
+
     return fake_items_db[skip : skip + limit]
 
 
@@ -45,4 +47,7 @@ async def read_item(skip: int = 0, limit: int = 10):
 
 @app.post("/items/")
 async def create_item(item: Item):
+    #Logica de agregar item a la base de datos
+    #Con el modelo de Item
+
     return item
